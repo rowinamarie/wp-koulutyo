@@ -28,10 +28,16 @@
 
                 <?php
             }
-
             ?>
-
-
         </div>
+
+        <nav>
+        <!--wp_nav_menu function displays the navigation menu-->
+            <?php wp_nav_menu(array(
+                'theme_location' => 'header-menu',
+                'menu_class'=> 'header-menu',
+            ));
+            ?>
+        </nav>
 
     </header>

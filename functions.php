@@ -4,6 +4,11 @@ function my_custom_theme_enqueue_styles() {
     wp_enqueue_style('my-custom-theme-style', get_stylesheet_uri());
 }
 
+
+register_nav_menus(array(
+    'header-menu' => __('Header Menu', 'my-custom-theme'),
+));
+
 add_action('wp_enqueue_scripts', 'my_custom_theme_enqueue_styles');
 // 'wp_enqueue_scripts' on hook, jota WordPress ajaa silloin, kun skriptejä ja tyylejä ladataan sivulle.
 
@@ -26,6 +31,9 @@ function my_custom_theme_setup() {
         'flex-width' => true,
     ));
 }
-add_action ('after_setup_theme', 'my_custom_theme_setup')
+add_action ('after_setup_theme', 'my_custom_theme_setup');
+
+
+
 
 ?>
